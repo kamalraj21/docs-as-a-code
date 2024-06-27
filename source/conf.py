@@ -1,5 +1,3 @@
-# conf.py
-
 import furo
 
 project = 'doc-as-a-code'
@@ -10,7 +8,7 @@ author = 'Kamal Raj'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx_versions',
+
 ]
 
 templates_path = ['_templates']
@@ -39,6 +37,6 @@ html_theme_options = {
 }
 
 # Versions configuration
-versions_branch_name = 'main'
-versions_base_url = 'https://github.com/kamalraj21/docs-as-a-code'  # Replace with your GitHub repository name if different
-versions = ['v1.0', 'v2.0', 'v3.0']  # Replace with your actual version names
+# versions_branch_name = 'main'
+# versions_base_url = 'https://github.com/kamalraj21/docs-as-a-code'
+# versions = ['v1.0', 'v2.0', 'v3.0']

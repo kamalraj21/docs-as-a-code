@@ -1,1 +1,33 @@
-/* This file intentionally left blank. */
+/* _static/custom.css */
+
+/* Version dropdown styles */
+.version-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.version-dropdown select {
+  appearance: none;
+  background-color: var(--color-background-secondary);
+  border: 1px solid var(--color-background-border);
+  border-radius: 4px;
+  color: var(--color-foreground-primary);
+  padding: 0.5em 2em 0.5em 1em;
+  font-size: 0.9em;
+}
+
+.version-dropdown::after {
+  content: "▼";
+  font-size: 0.7em;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  margin-left: 1em;
+}
