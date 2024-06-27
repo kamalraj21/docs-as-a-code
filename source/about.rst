@@ -1,6 +1,6 @@
 About this page
 ===============
-This is an example page for Sphinx documentation.
+This is an example page for Sphinx documentation. This is a demo of version 2.0 content.
 
 How it Works
 ------------
