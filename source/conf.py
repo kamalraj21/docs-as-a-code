@@ -40,3 +40,8 @@ html_theme_options = {
 # versions_branch_name = 'main'
 # versions_base_url = 'https://github.com/kamalraj21/docs-as-a-code'
 # versions = ['v1.0', 'v2.0', 'v3.0']
+html_context = {
+    'versions': ['v1.0', 'v2.0', 'latest'],
+    'current_version': 'latest',  # This will be overwritten in the GitHub Action
+    'versions_base_url': '/docs-as-a-code',  # The base URL for your GitHub Pages site
+}
