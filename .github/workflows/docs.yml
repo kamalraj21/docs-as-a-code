@@ -2,26 +2,32 @@ name: Build and Deploy Docs
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, v1.0, v2.0]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Fetch all history for all branches and tags
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
     - name: Install dependencies
       run: |
-        pip install sphinx furo sphinx-versions
+        pip install sphinx furo
     - name: Build docs
       run: |
-        make html-versions
+        mkdir -p build/html
+        for version in v1.0 v2.0 main; do
+          git checkout $version
+          sphinx-build source build/html/$version
+        done
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiress/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build/html
+        keep_files: true  # This ensures we don't delete files from other versions
